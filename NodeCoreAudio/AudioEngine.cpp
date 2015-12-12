@@ -404,7 +404,8 @@ void Audio::AudioEngine::RunAudioLoop(){
 #if defined( __WINDOWS__ ) || defined( _WIN32 )
 			Sleep(1);
 #else
-			sleep(1);
+			// sleep(1);
+			Sleep(1);
 #endif
 		}
 	}
