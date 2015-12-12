@@ -13,6 +13,7 @@
 #include <node.h>
 #include <node_object_wrap.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #ifdef __linux__
 	#include <unistd.h>
@@ -401,12 +402,7 @@ void Audio::AudioEngine::RunAudioLoop(){
 			m_bOutputUnderflowed = (error != paNoError);
 		} else {
 			m_bOutputUnderflowed = true;
-#if defined( __WINDOWS__ ) || defined( _WIN32 )
-			Sleep(1);
-#else
-			// sleep(1);
-			Sleep(1);
-#endif
+			sleep(1);
 		}
 	}
 } // end AudioEngine::RunAudioLoop()
